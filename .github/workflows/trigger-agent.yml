@@ -1,0 +1,12 @@
+name: AutoDevOps Agent Trigger
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger DevOps Agent
+        run: curl -X POST http://<your-hosted-api>/trigger
